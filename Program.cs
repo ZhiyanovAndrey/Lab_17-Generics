@@ -25,10 +25,25 @@ namespace Lab_17_Generics
             bill1.Print();
 
             Bill<string> bill2 = new Bill<string>();
-            bill2.SetNumber("№ 09871453");
+            bill2.SetNumber("№ F09871453");
             bill2.SetBalance(5036875.23);
             bill2.SetName("Авдеев Андрей Андреевич");
             bill2.Print();
+
+            Bill<string> bill3 = new Bill<string>();
+            Random random = new Random();
+            int[] array = new int[20];
+           
+            for (int i = 0; i < 20; i++) //ввод одномерного массива из случайных элементов
+            {
+                array[i] = random.Next(0, 9);            
+            }
+            string arr = string.Join("",array);
+
+            bill3.SetNumber(arr);
+            bill3.SetBalance(658963235.28);
+            bill3.SetName("Белоусов Гарри Борисович");
+            bill3.Print();
 
         }
     }
